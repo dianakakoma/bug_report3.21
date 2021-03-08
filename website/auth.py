@@ -23,6 +23,8 @@ def signUp():
             flash("Email must be longer than 4 characters.", category='error')
         elif len(firstName) < 2:
             flash("Your first name must be longer than 2 characters.", category='error')
+        elif len(password1) > 7:
+            flash("Your password is too short.", category='error')
         elif password1 != password2:
             flash("Your confirmation does not match", category='error')
         else:
