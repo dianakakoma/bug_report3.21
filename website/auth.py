@@ -9,7 +9,7 @@ def login():
 
 @auth.route('/logout')
 def logout():
-    return "<h3>Logoout</h3>"
+    return "<h3>Logout</h3>"
 
 @auth.route('/sign-up', methods=['GET','POST'])
 def signUp():
