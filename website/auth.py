@@ -11,7 +11,7 @@ def login():
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
-    #getting the input data from the form
+        #searching the database for the first matching email
 
         user = User.query.filter_by(email=email).first()
         if user:
@@ -48,6 +48,8 @@ def signUp():
         elif len(email) < 5:
             flash("Email must be longer than 4 characters.", category='error')
         # elif len(first_name) < 3:
+        # This keeps generating a type error for the len function.
+
         #     flash("Your first name must be longer than 2 characters.", category='error')
         elif len(password1) < 5:
             flash("Your password is too short.", category='error')

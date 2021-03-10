@@ -10,7 +10,7 @@ class Report(db.Model):
     screenshot = db.Column(db.String(300))
     suggested_fix = db.Column(db.String(10000))
     resolution_status = db.Column(db.String(30))
-    date = db.Column(db.DateTime(timezone=True), default=func.now)
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
     #associate each report with a user - one to many relationship (one user, many notes)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 

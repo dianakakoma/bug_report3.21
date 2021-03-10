@@ -36,7 +36,7 @@ def create_app():
 
 def create_database(app):
     #confirm if database already exists so that we don't overwrite it.
-    if not path.exists('website/' + DB_NAME):
-        db.create_all(app=app)
-        print("Created database!")
+    #if not path.exists('website/' + DB_NAME):
+    db.create_all(app=app)
+    print("Created database!")
 
