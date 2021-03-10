@@ -2,11 +2,16 @@
 
 {% block content %} This is home.
 <h1 align="center">Bug Reports</h1>
-<ul class="list-group list-group-flush" id="reports"></ul>
+<ul class="list-group list-group-flush" id="reports">
     {% for report in user.reports %}
-    <li class="list-group-item">{{ report.issueDescription }}</li>
-    {% endfor %}
+    <li class="list-group-item">{{ report.issueDescription }}
 
+    <button type="button" class="close" onClick="deleteReport({{ report.id }})">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    </li>
+    {% endfor %}
+</ul>
     <form method="POST">
         <textarea name="report" id="report" class="form-control>"></textarea>
         <br/>
