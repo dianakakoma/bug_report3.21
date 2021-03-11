@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash
+from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
 from . import db
 from .models import Report
@@ -21,7 +21,7 @@ def home():
             flash('Report added!', category='success')
     return render_template("home.html", user=current_user)
 
-@views.route('/delete-report',methods=['POST'])
+@views.route('/delete-report', methods=['POST'])
 def delete_report():
     report = json.loads(request.data)
     reportId = report['reportId']
