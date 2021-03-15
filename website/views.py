@@ -13,7 +13,7 @@ def home():
         report = request.form.get('report')
 
         if len(report) < 1:
-            flash("Note is too short!", category='error')
+            flash("The report is too short!", category='error')
         else:
             new_report = Report(issueDescription=report, user_id=current_user.id)
             db.session.add(new_report)
