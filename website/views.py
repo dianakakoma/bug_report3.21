@@ -11,11 +11,18 @@ views = Blueprint('views', __name__)
 def home():
     if request.method == 'POST':
         report = request.form.get('report')
+        req = request.form
+        issueDescription = req.get('issueDescription')
+        url = req.get('url')
+        suggested_fix = req.get('suggested_fix')
+        screenshot = req.get('screenshot')
+        resolution_status = req.get('resolution_status')
+        date = req.get('date')
 
-        if len(report) < 1:
+        if len(issueDescription) < 1:
             flash("The report is too short!", category='error')
         else:
-            new_report = Report(issueDescription=report, user_id=current_user.id)
+            new_report = Report(issueDescription=issueDescription, user_id=current_user.id, url=url, suggested_fix=suggested_fix, screenshot=screenshot, resolution_status=resolution_status,date=date )
             db.session.add(new_report)
             db.session.commit()
             flash('Report added!', category='success')
