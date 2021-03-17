@@ -11,6 +11,7 @@ views = Blueprint('views', __name__)
 def home():
     if request.method == 'POST':
         report = request.form.get('report')
+        print(report)
         req = request.form
         issueDescription = req.get('issueDescription')
         url = req.get('url')

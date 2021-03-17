@@ -10,8 +10,15 @@
         <span aria-hidden="true">&times;</span>
     </button>
     </li>
+    <li class="list-group-item">URL: {{ report.url }}</li>
+   <!-- <li class="list-group-item">Screenshot: {{ report.screenshot }}</li> -->
+    <li class="list-group-item">Status: {{ report.resolution_status }}</li>
+    <li class="list-group-item">Suggested Fix: {{ report.suggested_fix }}</li>
     {% endfor %}
+
 </ul>
+<p>***********</p>
+<br/>
     <form method="POST">
 
         <div class="form-group">
