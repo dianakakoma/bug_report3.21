@@ -11,7 +11,7 @@
     </button>
     </li>
     <li class="list-group-item">URL: {{ report.url }}</li>
-   <!-- <li class="list-group-item">Screenshot: {{ report.screenshot }}</li> -->
+    <li class="list-group-item">Screenshot: {{ report.screenshot }}</li>
     <li class="list-group-item">Status: {{ report.resolution_status }}</li>
     <li class="list-group-item">Suggested Fix: {{ report.suggested_fix }}</li>
     {% endfor %}
@@ -35,9 +35,14 @@
             <input type="text" name="url" id="url" class="form-control">
         </div>
 
+<!--        <div class="form-group">-->
+<!--            <label>Screenshot - upload a screenshot of the issue</label>-->
+<!--            <input type="text" name="screenshot" id="screenshot" class="form-control">-->
+<!--        </div>-->
+
         <div class="form-group">
             <label>Screenshot - upload a screenshot of the issue</label>
-            <input type="text" name="screenshot" id="screenshot" class="form-control">
+            <input type="file" name="screenshot" id="screenshot" class="form-control">
         </div>
 
         <div class="form-group">

@@ -23,7 +23,7 @@ def home():
         if len(issueDescription) < 1:
             flash("The report is too short!", category='error')
         else:
-            new_report = Report(issueDescription=issueDescription, user_id=current_user.id, url=url, suggested_fix=suggested_fix, screenshot=screenshot, resolution_status=resolution_status,date=date )
+            new_report = Report(issueDescription=issueDescription, user_id=current_user.id, url=url, suggested_fix=suggested_fix, screenshot=screenshot, resolution_status=resolution_status, date=date )
             db.session.add(new_report)
             db.session.commit()
             flash('Report added!', category='success')
