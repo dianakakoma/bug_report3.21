@@ -1,4 +1,4 @@
-from project.models import User, Report
+from website.models import User, Report
 
 def test_new_user():
     # Given a User model
@@ -6,7 +6,7 @@ def test_new_user():
     # Then check the email, hashed password and first_name
     user = User('jfkennedy@email.com', 'John')
 
-    #User(email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))
+    # User(email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))
     assert user.email == 'jfkennedy@email.com'
     assert user.first_name == 'John'
 
