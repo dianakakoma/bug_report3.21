@@ -67,3 +67,11 @@ def signUp():
             return redirect(url_for('views.home'))
 
     return render_template("sign_up.html", user=current_user)
+
+#screenshot upload route
+@auth.route('/',methods=['POST'])
+def upload_file():
+    uploaded_file = request.files['screenshot']
+    if uploaded_file.filename != "":
+        uploaded_file.save(uploaded_file.filename)
+    return redirect(url_for('home'))

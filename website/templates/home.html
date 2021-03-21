@@ -1,6 +1,7 @@
 {% extends "base.html" %}{% block title %} Bug Report {% endblock %}
 
-{% block content %} This is home.
+{% block content %}
+<img src="{{url_for('static',filename='happy-ladybug.png')}}" />
 <h1 align="center">Bug Reports</h1>
 <ul class="list-group list-group-flush" id="reports">
     {% for report in user.reports %}
@@ -14,12 +15,14 @@
     <li class="list-group-item">Screenshot: {{ report.screenshot }}</li>
     <li class="list-group-item">Status: {{ report.resolution_status }}</li>
     <li class="list-group-item">Suggested Fix: {{ report.suggested_fix }}</li>
+    <br/>
+    <p align="center">***********</p>
     {% endfor %}
 
 </ul>
-<p>***********</p>
+
 <br/>
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
 
         <div class="form-group">
             <label>issueDescription</label>
@@ -42,7 +45,7 @@
 
         <div class="form-group">
             <label>Screenshot - upload a screenshot of the issue</label>
-            <input type="file" name="screenshot" id="screenshot" class="form-control">
+            <input type="file" name="screenshot" id="screenshot" accept=".jpg,.pdf,.png" class="form-control-file">
         </div>
 
         <div class="form-group">
