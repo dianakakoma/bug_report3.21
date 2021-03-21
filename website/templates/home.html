@@ -1,7 +1,8 @@
 {% extends "base.html" %}{% block title %} Bug Report {% endblock %}
 
-{% block content %} This is home.
+{% block content %}
 <h1 align="center">Bug Reports</h1>
+<img src="static/images/happy-ladybug.74cc4315.png" width="250" align="center">
 <ul class="list-group list-group-flush" id="reports">
     {% for report in user.reports %}
     <li class="list-group-item">{{ report.issueDescription }}
@@ -12,8 +13,8 @@
     </li>
     <li class="list-group-item">URL: {{ report.url }}</li>
    <!-- <li class="list-group-item">Screenshot: {{ report.screenshot }}</li> -->
-    <li class="list-group-item">Status: {{ report.resolution_status }}</li>
-    <li class="list-group-item">Suggested Fix: {{ report.suggested_fix }}</li>
+<!--    <li class="list-group-item">Status: {{ report.resolution_status }}</li> Once submitted thi field should change to submitted -->
+    <li class="list-group-item">Do you have a suggested fix for this issue? {{ report.suggested_fix }}</li>
     {% endfor %}
 
 </ul>
@@ -22,28 +23,28 @@
     <form method="POST">
 
         <div class="form-group">
-            <label>issueDescription</label>
-            <textarea name="issueDescription" id="issueDescription" class="form-control"></textarea>
+            <label>Please describe the issue you found</label>
+            <textarea name="issueDescription" id="issueDescription" class="form-control" placeholder="Describe the issue here."></textarea>
         </div>
         <div class="form-group">
             <label>Suggested Fix</label>
-            <textarea name="suggested_fix" id="suggested_fix" class="form-control"></textarea>
+            <textarea name="suggested_fix" id="suggested_fix" class="form-control" placeholder="Enter any ideas or suggestions you have about fixing the issue here."></textarea>
         </div>
 
         <div class="form-group">
             <label>URL - where did you find this bug?</label>
-            <input type="text" name="url" id="url" class="form-control">
+            <input type="text" name="url" id="url" class="form-control" placeholder="Enter the website where you found this issue">
         </div>
 
-        <div class="form-group">
-            <label>Screenshot - upload a screenshot of the issue</label>
-            <input type="text" name="screenshot" id="screenshot" class="form-control">
-        </div>
+<!--        <div class="form-group"> Coming Soon!-->
+<!--            <label>Screenshot - upload a screenshot of the issue</label>-->
+<!--            <input type="text" name="screenshot" id="screenshot" class="form-control">-->
+<!--        </div>-->
 
-        <div class="form-group">
-            <label>Status</label>
-            <input type="text" name="resolution_status" id="resolution_status" class="form-control">
-        </div>
+<!--        <div class="form-group"> Coming Soon - after form submission-->
+<!--            <label>Status</label>-->
+<!--            <input type="text" name="resolution_status" id="resolution_status" class="form-control">-->
+<!--        </div>-->
 
         <br/>
         <div align="center">
