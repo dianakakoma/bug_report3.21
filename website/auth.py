@@ -48,7 +48,6 @@ def signUp():
         elif len(email) < 5:
             flash("Email must be longer than 4 characters.", category='error')
         # elif len(first_name) < 3:
-        # This keeps generating a type error for the len function.
 
         #     flash("Your first name must be longer than 2 characters.", category='error')
         elif len(password1) < 5:
